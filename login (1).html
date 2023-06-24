@@ -1,0 +1,134 @@
+<!DOCTYPE html>   
+<html>   
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<title> Login Page </title>  
+<style>   
+Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-image: url('https://cdn.wallpapersafari.com/44/76/M96pvd.jpg');
+}  
+button {   
+        background-color: #FFFFFF;   
+        width: 30%;  
+        color: #1CD828;   
+        padding: 10px;   
+        margin: 10px 0px;   
+        border: 2px solid black;   
+        cursor: pointer;
+       }   
+     
+ input[type=text], input[type=password] {   
+        width: 80%;   
+        margin: 8px 0;  
+        padding: 8px 8px;      
+        border: 1px solid black;   
+display:table;       
+ box-sizing: border-box;   
+    }  
+ button:hover {   
+        opacity: 0.7;   
+    }     
+ .container {   
+        padding: 10px;   
+        width: 400px; 
+        margin-left: 480px;
+    } 
+h1{
+padding-top:50px;
+
+}
+.none{
+display:none;
+}
+
+</style>   
+
+</head>    
+<body>   
+<div class="outline"> 
+    <center> <h1> CLUB LOGIN FORM </h1> </center>   
+<hr style="width:30%">
+    <form method="POST"  id="sheetdb-form">  
+        <div class="container">
+            <label>Email : </label>   
+            <input type="text" placeholder="Enter Email" name="data[email]">
+            <br>  
+            <label>Password : </label>   
+            <input type="password" placeholder="Enter Password" name="data[psw]">
+            <br>
+
+<button class="none" onclick="signIn()">Login</button>
+<a href="file:///C:/Users/DELL/OneDrive/Documents/dashboard.html">.</a>
+            <br>
+           
+
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics.js";
+ 
+  const firebaseConfig = {
+    apiKey: "AIzaSyDi25G6vt0KDTaLB1jeI1XrmoLngTb8k9o",
+    authDomain: "my-first-website-d1446.firebaseapp.com",
+    projectId: "my-first-website-d1446",
+    storageBucket: "my-first-website-d1446.appspot.com",
+    messagingSenderId: "480973275691",
+    appId: "1:480973275691:web:555a1a5b4de7551844e06e",
+    measurementId: "G-FE62JHJSJ2"
+  };
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+const auth = firebase.auth();
+
+function signIn(){
+  var email = document.getElementById("email");
+  var password = document.getElementById("password"); 
+
+  const promise = auth.signInWithEmailAndPassword(email.value, password.value);
+  promise.then(() => location.replace("file:///C:/Users/DELL/OneDrive/Documents/dashboard.html")).catch(e => alert(e.message));
+
+
+};
+
+
+function signOut(){
+  auth.signOut();
+  location.replace("file:///C:/Users/DELL/OneDrive/Documents/log.html");
+  alert("Signed Out")
+}
+
+
+}); </script>
+
+</form>
+ </div>  
+<center><a href="file:///C:/Users/DELL/OneDrive/Documents/dashboard.html"><button onclick="signIn()">Login</button></a><br>
+<input type="checkbox"> Remember me      
+            Forgot <a href="#"> password? </a>  
+<script>
+function signIn(textbox)
+{
+    if (textbox.value =='swagata') {
+        textbox.setCustomValidity('İstifadəçi adını daxil edin');
+        textbox.style.borderColor = "red";
+        textbox.style.borderWidth = "1px"
+        textbox.style.borderStyle = "solid";
+        textbox.style.outline = "none";
+        document.getElementById('error').innerHTML = '';
+    }else{
+        textbox.setCustomValidity('');
+        textbox.style.border="none";
+        document.getElementById('error').innerHTML = '';
+    }
+}
+
+
+</script>
+
+<p><a href="file:///C:/Users/DELL/Downloads/regg.html" style="color:blue;text-decoration:none">Register here...</a></p> 
+        </div>   
+
+  
+</body>     
+</html>  
